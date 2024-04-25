@@ -1,0 +1,41 @@
+.container {
+	display: flex;
+	flex-direction: column;
+	align-items: flex-start;
+}
+
+.img {
+	border-radius: 50%;
+	width: 280px;
+	height: 280px;
+	margin-bottom: 25px;
+}
+
+.name {
+	text-align: left;
+	font-size: 26px;
+	font-weight: 600;
+	line-height: 33.8px;
+	margin-bottom: 10px;
+}
+
+.login {
+	text-align: left;
+	margin-bottom: 10px;
+
+	a {
+		color: #0064eb;
+		text-decoration: none;
+		font-size: 18px;
+		font-weight: 400;
+		line-height: 21.78px;
+	}
+}
+
+.info {
+	margin-top: 10px;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	gap: 10px;
+}

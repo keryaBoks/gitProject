@@ -1,15 +1,10 @@
 import { useQuery } from "@tanstack/react-query";
-
-export interface UserDataRepos {
-	name: string;
-	description: string | null;
-	html_url: string;
-}
+import { UserDataReposTypes } from "../types/UserDataReposTypes";
 
 export function useUserDataRepos(username: string) {
 	const token = "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";
 
-	return useQuery<UserDataRepos[]>({
+	return useQuery<UserDataReposTypes[]>({
 		queryKey: ["userDataRepos", username],
 		queryFn: async () => {
 			const response = await fetch(

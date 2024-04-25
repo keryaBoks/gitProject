@@ -1,13 +1,5 @@
 import { useQuery } from "@tanstack/react-query";
-
-export interface UserData {
-	avatar_url: string;
-	name: string;
-	login: string;
-	followers: number;
-	following: number;
-	html_url: string;
-}
+import { UserDataTypes } from "../types/UserDataTypes";
 
 export function useUserData(
 	username: string,
@@ -15,7 +7,7 @@ export function useUserData(
 ) {
 	const token = "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";
 
-	return useQuery<UserData>({
+	return useQuery<UserDataTypes>({
 		queryKey: ["userData", username],
 		queryFn: async () => {
 			const response = await fetch(`https://api.github.com/users/${username}`, {
