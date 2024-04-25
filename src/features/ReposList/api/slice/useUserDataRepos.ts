@@ -2,7 +2,7 @@ import { useQuery } from "@tanstack/react-query";
 import { UserDataReposTypes } from "../types/UserDataReposTypes";
 
 export function useUserDataRepos(username: string) {
-	const token = "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";
+	const token = "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";
 
 	return useQuery<UserDataReposTypes[]>({
 		queryKey: ["userDataRepos", username],

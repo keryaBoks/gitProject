@@ -5,7 +5,7 @@ export function useUserData(
 	username: string,
 	setIsNotFoundUser: (value: boolean) => void
 ) {
-	const token = "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";
+	const token = "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";
 
 	return useQuery<UserDataTypes>({
 		queryKey: ["userData", username],

@@ -1,6 +1,6 @@
 import type { FC } from "react";
-import { UserDataRepos } from "../../../../api/useUserDataRepos";
 import styles from "./ReposItem.module.css";
+import { UserDataReposTypes } from "../../api";
 
 interface ReposItemProps {
   item: {
@@ -12,7 +12,7 @@ interface ReposItemProps {
 
 export const ReposItem: FC<ReposItemProps> = ({ item }) => {
 
-  const { name, description, html_url } = item as UserDataRepos;
+  const { name, description, html_url } = item as UserDataReposTypes;
 
   return (
     <div className={styles.container}>
@@ -22,7 +22,7 @@ export const ReposItem: FC<ReposItemProps> = ({ item }) => {
         </a>
       </div>
       <div className={styles.desc}>
-        {description === null ? (
+        {!description ? (
           <p>There is no description</p>
         ) : (
           <p>{description}</p>

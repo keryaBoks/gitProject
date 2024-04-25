@@ -1,6 +1,3 @@
-/* eslint-disable @typescript-eslint/no-unsafe-argument */
-/* eslint-disable @typescript-eslint/no-unsafe-assignment */
-/* eslint-disable @typescript-eslint/no-unsafe-call */;
 import { UserDataTypes, useUserData } from "../api";
 import { useUserNameStore } from "src/widgets/Header/model";
 import { UserNotFountUserStore } from "src/pages/Mainpage";
