@@ -1,5 +1,5 @@
 export interface UserDataReposTypes {
 	name: string;
-	description: string | null;
+	description: string;
 	html_url: string;
 }

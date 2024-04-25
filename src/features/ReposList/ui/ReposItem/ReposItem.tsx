@@ -5,7 +5,7 @@ import { UserDataReposTypes } from "../../api";
 interface ReposItemProps {
   item: {
     name: string;
-    description: string | null;
+    description: string;
     html_url: string;
   };
 }
