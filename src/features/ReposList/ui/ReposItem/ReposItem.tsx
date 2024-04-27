@@ -1,18 +1,12 @@
 import type { FC } from "react";
 import styles from "./ReposItem.module.css";
-import { UserDataReposTypes } from "../../api";
+import { DEFAULT_DSECTIPTION } from "@features/ReposList/ui/ReposItem/conts";
+import { ReposItemProps } from "@features/ReposList/ui/ReposItem/ReposItemTypes";
 
-interface ReposItemProps {
-  item: {
-    name: string;
-    description: string;
-    html_url: string;
-  };
-}
 
 export const ReposItem: FC<ReposItemProps> = ({ item }) => {
 
-  const { name, description, html_url } = item as UserDataReposTypes;
+  const { name, description, html_url } = item;
 
   return (
     <div className={styles.container}>
@@ -22,11 +16,7 @@ export const ReposItem: FC<ReposItemProps> = ({ item }) => {
         </a>
       </div>
       <div className={styles.desc}>
-        {!description ? (
-          <p>There is no description</p>
-        ) : (
-          <p>{description}</p>
-        )}
+        {description || DEFAULT_DSECTIPTION}
       </div>
     </div>
   );

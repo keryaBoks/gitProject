@@ -1,16 +1,18 @@
 import { UserDataTypes, useUserData } from "../api";
-import { useUserNameStore } from "src/widgets/Header/model";
-import { UserNotFountUserStore } from "src/pages/Mainpage";
+import { useUserNameStore } from "@widgets/Header/model";
+import { userNotFountUserStore } from "@pages/Mainpage";
 import styles from "./MainUserProfile.module.css";
+import { Loader } from "@widgets/Loader";
 
 
 export const MainUserProfile = () => {
-  const { setIsNotFoundUser } = UserNotFountUserStore()
-  const { userName = 'keryaboks' } = useUserNameStore();
+
+  const { setIsNotFoundUser } = userNotFountUserStore()
+  const { userName } = useUserNameStore();
 
   const { isLoading, data } = useUserData(userName, setIsNotFoundUser);
 
-  if (isLoading) return <div>Loading...</div>;
+  if (isLoading) return <Loader/>;
 
   const { avatar_url, name, login, followers, following, html_url } = data as UserDataTypes;
 
@@ -20,7 +22,7 @@ export const MainUserProfile = () => {
       <div>
         <div className={styles.name}>{name}</div>
         <div className={styles.login}>
-          <a href={html_url} target="_blank" rel="noreferrer">
+          <a className={styles.link} href={html_url} target="_blank" rel="noreferrer">
             {login}
           </a>
         </div>

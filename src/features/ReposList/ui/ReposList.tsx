@@ -1,9 +1,10 @@
-import { ReactComponent as RepIcon } from "src/icons/warnings/rep-icon.svg";
-import { WarningComponent } from "src/widgets/WarningComponent/WarningComponent";
-import { ReposItem } from "./ReposItem/ReposItem";
-import { UserDataReposTypes, useUserDataRepos } from "../api";
-import { useUserNameStore } from "src/widgets/Header/model";
+import { ReactComponent as RepIcon } from "@icons/warnings/rep-icon.svg";
+import { WarningComponent } from "@widgets/WarningComponent/WarningComponent";
+import { ReposItem } from "@features/ReposList/ui/ReposItem/ReposItem";
+import { UserDataReposTypes, useUserDataRepos } from "@features/ReposList/api";
+import { useUserNameStore } from "@widgets/Header/model";
 import styles from "./ReposList.module.css";
+import { Loader } from "@widgets/Loader";
 
 
 export const ReposList = () => {
@@ -11,12 +12,12 @@ export const ReposList = () => {
   const { data } = useUserDataRepos(userName);
 
   if (!data) {
-    return <div>Loading...</div>;
+    return <Loader />;
   }
 
   return (
     <div className={styles.container}>
-      {data.length === 0 ? (
+      {!data.length ? (
         <WarningComponent text="Repository list is empty" icon={<RepIcon />} />
       ) : (
         <>

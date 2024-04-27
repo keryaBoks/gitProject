@@ -1,11 +1,11 @@
 .container {
 	background-color: blue;
-	height: 72px;
+	max-height: 100%;
 	display: flex;
 	align-items: center;
 	justify-content: flex-start;
 	gap: 20px;
-	padding: 0 30px;
+	padding: 15px 30px;
 }
 
 .wrapper {
@@ -17,12 +17,4 @@
 	bottom: 11px;
 	left: 10px;
 	cursor: pointer;
-}
-
-.input {
-	width: 463px;
-	height: 40px;
-	border: none;
-	border-radius: 5px;
-	padding-left: 35px;
 }

@@ -1,14 +1,12 @@
-import { Header } from "src/widgets/Header";
-import { MainPage } from "src/pages/Mainpage";
+import { MainPage } from "@pages/Mainpage";
+import { Header } from "@widgets/Header";
 
-function App() {
-
+export const App = () => {
   return (
-    <div className="app">
+    <>
       <Header />
       <MainPage />
-    </div>
+    </>
   );
 }
 
-export default App;
